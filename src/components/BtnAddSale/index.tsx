@@ -216,7 +216,7 @@ const BtnAddSale = (props: any) => {
                   </div>
 
                   <div className="col-sm-6 mt-4">
-                    <p>Data da Venda: SaleDate*</p>
+                    <p>Data da Venda: *</p>
                     <div className="input-group flex-nowrap">
                       <DatePicker
                         selected={saleDate}
