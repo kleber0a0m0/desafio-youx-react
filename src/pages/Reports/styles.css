@@ -1,0 +1,45 @@
+.titulo {
+  border-bottom: #023e8a solid 4px;
+  width: 260px;
+  font-weight: bold;
+  color: #535353;
+}
+
+.rentangle {
+  border: #0000001f solid 1px;
+  height: 150px;
+}
+
+.icon {
+  color: #023e8a;
+}
+
+.faturamento {
+  border: #0000001f solid 1px;
+}
+
+.barraSuperior {
+  width: 100%;
+  background-color: #00000018;
+}
+
+.bg-progress {
+  background-color: #062d81fd;
+}
+
+.bar {
+  border-radius: 0%;
+}
+.esquerda {
+  height: 500px;
+}
+
+.mb-4a {
+  margin-bottom: 37px;
+}
+
+.titulo2 {
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: #000000 solid 1px;
+}

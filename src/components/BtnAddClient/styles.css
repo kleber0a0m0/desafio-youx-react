@@ -1,0 +1,44 @@
+.h4 {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #535353;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+}
+
+.btnRegisterClient {
+  background-color: #023e8a;
+  color: #fff;
+  width: 100%;
+}
+
+.btnRegisterClient:hover {
+  background-color: #45505f;
+  color: #fff;
+}
+
+.btn-outline-secondary {
+  background-color: #023e8a;
+}
+
+.background {
+  background-color: #023e8a;
+  color: #ffffff;
+}
+
+.validationError {
+  color: rgb(255, 0, 0);
+}
+.container {
+  width: 100%;
+}
+
+.map {
+  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+  border: #000 solid 1px;
+}

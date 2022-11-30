@@ -1,0 +1,42 @@
+.dropdownIcon {
+  margin: 0px;
+}
+
+.btnAction:active {
+  background-color: #45505f;
+}
+
+.btnAction:hover {
+  background-color: #023d8ade;
+  color: #fff;
+}
+
+.btnAction {
+  background-color: #023e8a;
+  color: #fff;
+}
+.page-link {
+  border-style: none;
+  padding: 0px;
+}
+
+.page-link {
+  border-style: none;
+  padding: 5px;
+}
+
+.pagination {
+  margin-bottom: 50px;
+}
+.background {
+  background-color: #023e8a;
+  color: #ffffff;
+}
+
+.d-inline-flex {
+  float: left;
+}
+.icons {
+  margin: 0px;
+  color: #fff;
+}

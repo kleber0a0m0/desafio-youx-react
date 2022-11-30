@@ -1,0 +1,31 @@
+.profilePhoto {
+  width: 50px;
+  border-radius: 100%;
+  border: 3px solid #fff;
+  margin-right: 10px;
+}
+
+.iconExit {
+  width: 35px;
+  font-size: 25px;
+  margin: 0px;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.iconExit:hover {
+  color: rgb(202, 202, 202);
+}
+
+.name {
+  margin: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.office {
+  margin: 1px;
+  font-size: 14px;
+  color: #fff;
+}

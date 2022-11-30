@@ -1,0 +1,31 @@
+.pagination__item--active {
+  background: none;
+  font-weight: bold;
+  border: none;
+}
+
+.pagination__item--active:focus {
+  outline: none;
+}
+
+.disabled {
+  color: #35ff35;
+  font-weight: lighter;
+}
+
+.page-link {
+  color: #000;
+  font-weight: 600;
+}
+.page-link:hover {
+  color: #000;
+  font-weight: 600;
+}
+
+.currentPage {
+  display: table;
+  float: left;
+}
+.navigation {
+  float: right;
+}

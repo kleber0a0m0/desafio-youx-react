@@ -1,0 +1,31 @@
+.background {
+  background-color: #023e8a;
+  color: #ffffff;
+}
+
+.imgLogo {
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.navLink {
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  font-size: 20px;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 0.5;
+  margin-top: 15px;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.exitIcon {
+  font-size: 20px;
+}
