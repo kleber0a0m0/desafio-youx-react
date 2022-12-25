@@ -161,7 +161,7 @@ function ClientTable(search: any) {
   const handleClickEditClient = (idNumber: any) => {
     openModal();
     http: axios
-      .get(`${URL_API_BACKEND}/clients/findById/${idNumber}`)
+      .get(`https://api.npoint.io/6fdf4f9df2c75adfea87`)
       .then((response) => {
         setEditId(idNumber);
         setNameEditClient(response.data.name);
