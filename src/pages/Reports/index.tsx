@@ -38,7 +38,7 @@ const Reports = (props: any) => {
   const [currentYearSold, setCurrentYearSold] = useState(0);
 
   useEffect(() => {
-    http: axios.get(`${URL_API_BACKEND}/sales/report`).then((response) => {
+    http: axios.get(`https://api.npoint.io/1b7f1ff9db778131dec4`).then((response) => {
       setJanuaryTotalSold(response.data.januaryTotalSold);
       setFebruaryTotalSold(response.data.februaryTotalSold);
       setMarchTotalSold(response.data.marchTotalSold);
