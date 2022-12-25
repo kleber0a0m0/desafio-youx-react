@@ -75,7 +75,7 @@ function SalesTable(search: any) {
   useEffect(() => {
     //localhost:8080/client?size=15&page=3
     http: axios
-      .get(`${URL_API_BACKEND}/sales?size=${SIZE}&page=${offset / SIZE}`)
+      .get(`https://api.npoint.io/bae7a4d56933a5baf7ca`)
       .then((response) => {
         setSales(response.data.content);
         setTotalElements(response.data.totalElements);
