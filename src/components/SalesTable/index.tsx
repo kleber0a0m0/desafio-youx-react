@@ -16,7 +16,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Client } from "../../models/client";
 import DatePicker from "react-datepicker";
-
 //Inicio mascara CNPJ
 function addMaskCNPJ(cnpj: string) {
   const cnpjWithMask =
@@ -32,21 +31,18 @@ function addMaskCNPJ(cnpj: string) {
   return cnpjWithMask;
 }
 //Fim mascara CNPJ
-
 //Inicio função de converter data
 function reformatDate(dateStr: any) {
   var dArr = dateStr.split("-"); // ex input: "2010-01-18"
   return dArr[2] + "/" + dArr[1] + "/" + dArr[0]; //ex output: "18/01/10"
 }
 //Fim função de converter data
-
 function SalesTable(search: any) {
   //Inicio função de pesquisa
   function pesquisa() {
     var inputSearch = document.getElementById(
       "inputSearch"
     ) as HTMLInputElement;
-
     http: axios
       .get(
         `${URL_API_BACKEND}/sales/find?search=${
@@ -59,30 +55,27 @@ function SalesTable(search: any) {
       });
   }
   //Fim função de pesquisa
-
   //Inicio listar as vendas
   function listar() {
     http: axios
-      .get(`https://api.npoint.io/bae7a4d56933a5baf7ca`)
+      .get(`${URL_API_BACKEND}/sales?size=${SIZE}&page=${offset / SIZE}`)
       .then((response) => {
         setSales(response.data.content);
         setTotalElements(response.data.totalElements);
       });
   }
   //Fim listar as vendas
-
   //Inicio dados relevantes para a paginação
   const SIZE = 10;
   const [totalElements, setTotalElements] = useState({});
   var [offset, setOffset] = useState(0);
   const [sales, setSales] = useState<Sale[]>([]);
   //Fim dados relevantes para a paginação
-
   //Inicio listar as vendas
   useEffect(() => {
     //localhost:8080/client?size=15&page=3
     http: axios
-      .get(`https://api.npoint.io/bae7a4d56933a5baf7ca`)
+      .get(`${URL_API_BACKEND}/sales?size=${SIZE}&page=${offset / SIZE}`)
       .then((response) => {
         setSales(response.data.content);
         setTotalElements(response.data.totalElements);
@@ -91,7 +84,6 @@ function SalesTable(search: any) {
       });
   }, [offset]);
   //Fim listar as vendas
-
   //Inicio função de deletar
   const [deleteId, setDeleteId] = useState({});
   function deleteSale(number: any) {
@@ -104,7 +96,6 @@ function SalesTable(search: any) {
       });
   }
   //Fim função de deletar
-
   //Inicio abre e fecha o Modal
   function closeModal() {
     $("#editSale").modal("hide");
@@ -113,7 +104,6 @@ function SalesTable(search: any) {
     $("#editSale").modal("show");
   }
   //Fim abre e fecha o Modal
-
   //Inicio validar campos addSale
   const schema = yup
     .object({
@@ -122,7 +112,6 @@ function SalesTable(search: any) {
       saleValue: yup.number().required("O valor da venda é obrigatório"),
     })
     .required();
-
   const {
     register,
     handleSubmit,
@@ -130,21 +119,17 @@ function SalesTable(search: any) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
   //Fim validar campos addSale
-
   //Inicio listar Clientes no Select do modal
   const [clients, setClients] = useState<Client[]>([]);
   useEffect(() => {
-    axios.get(`https://api.npoint.io/f4c6c2a96c07bc6a1b0c`).then((response) => {
+    axios.get(`${URL_API_BACKEND}/clients/all`).then((response) => {
       setClients(response.data);
     });
   }, []);
   //Fim listar Clientes no Select do modal
-
   //Inicio DatePicker do modal
   const [saleDate, setSaleDate] = useState(new Date());
-
   const days = ["D", "S", "T", "Q", "Q", "S", "S"];
   const months = [
     "Janeiro",
@@ -160,7 +145,6 @@ function SalesTable(search: any) {
     "Novembro",
     "Dezembro",
   ];
-
   const locale = {
     localize: {
       day: (n: any) => days[n],
@@ -171,13 +155,11 @@ function SalesTable(search: any) {
     },
   };
   //Fim DatePicker do modal
-
   //Inicio editar o cliente, abrir o modal e carregar os dados
   const [clientEditSale, setClientEditSale] = useState("");
   const [situationEditSale, setSituationEditSale] = useState("");
   const [saleValueEditSale, setSaleValueEditSale] = useState("");
   const [saleDateEditSale, setSaleDateEditSale] = useState("");
-
   const handleChangeClientEdit = (event: any) => {
     setClientEditSale(event.target.value);
   };
@@ -190,11 +172,10 @@ function SalesTable(search: any) {
   const handleChangeSaleDateEdit = (event: any) => {
     setSaleDateEditSale(event.target.value);
   };
-
   const handleClickEditSale = (idNumber: any) => {
     openModal();
     http: axios
-      .get(`https://api.npoint.io/872c2b54bdb4bfafa508`)
+      .get(`${URL_API_BACKEND}/sales/findById/${idNumber}`)
       .then((response) => {
         setEditId(idNumber);
         setClientEditSale(response.data.client.id);
@@ -204,7 +185,6 @@ function SalesTable(search: any) {
       });
   };
   //Fim editar o cliente, abrir o modal e carregar os dados
-
   //Inicio editar o cliente quando apertar o botão salvar
   const [editId, setEditId] = useState();
   function editSale(number: any) {
@@ -231,7 +211,6 @@ function SalesTable(search: any) {
       });
   }
   //Fim editar o cliente quando apertar o botão salvar
-
   return (
     <>
       <div className="container">
@@ -261,7 +240,6 @@ function SalesTable(search: any) {
             <BtnAddSale className="icons" />
           </div>
         </div>
-
         <div className="table-responsive table-responsive-xl">
           <table className="table-responsive table table-striped">
             <thead>
@@ -331,7 +309,6 @@ function SalesTable(search: any) {
           />
         </div>
       </div>
-
       {/*Inicio modal de Exclusão */}
       <div
         className="modal fade"
@@ -372,7 +349,6 @@ function SalesTable(search: any) {
         </div>
       </div>
       {/*Fim modal de Exclusão */}
-
       {/*Inicio Modal de Editar */}
       <div
         className="modal fade"
@@ -415,7 +391,6 @@ function SalesTable(search: any) {
                       </p>
                     )}
                   </div>
-
                   <div className="col-sm-6 mt-4">
                     <p>Data da Venda:</p>
                     <div className="input-group flex-nowrap">
@@ -430,7 +405,6 @@ function SalesTable(search: any) {
                       />
                     </div>
                   </div>
-
                   <div className="col-sm-6 mt-4">
                     <p>Situação: *</p>
                     <div className="input-group flex-nowrap">
@@ -461,7 +435,6 @@ function SalesTable(search: any) {
                       </p>
                     )}
                   </div>
-
                   <div className="col-sm-6 mt-4">
                     <p>Valor da Venda: *</p>
                     <div className="input-group flex-nowrap">
@@ -511,5 +484,4 @@ function SalesTable(search: any) {
     </>
   );
 }
-
 export default SalesTable;
