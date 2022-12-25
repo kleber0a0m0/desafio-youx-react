@@ -123,7 +123,7 @@ function SalesTable(search: any) {
   //Inicio listar Clientes no Select do modal
   const [clients, setClients] = useState<Client[]>([]);
   useEffect(() => {
-    axios.get(`${URL_API_BACKEND}/clients/all`).then((response) => {
+    axios.get(`https://api.npoint.io/a54fb61b1144bef8d86d`).then((response) => {
       setClients(response.data);
     });
   }, []);
