@@ -82,7 +82,7 @@ function SalesTable(search: any) {
   useEffect(() => {
     //localhost:8080/client?size=15&page=3
     http: axios
-      .get(`${URL_API_BACKEND}/sales?size=${SIZE}&page=${offset / SIZE}`)
+      .get(`https://api.npoint.io/bae7a4d56933a5baf7ca`)
       .then((response) => {
         setSales(response.data.content);
         setTotalElements(response.data.totalElements);
@@ -136,7 +136,7 @@ function SalesTable(search: any) {
   //Inicio listar Clientes no Select do modal
   const [clients, setClients] = useState<Client[]>([]);
   useEffect(() => {
-    axios.get(`${URL_API_BACKEND}/clients/all`).then((response) => {
+    axios.get(`https://api.npoint.io/f4c6c2a96c07bc6a1b0c`).then((response) => {
       setClients(response.data);
     });
   }, []);
