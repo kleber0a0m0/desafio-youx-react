@@ -70,7 +70,7 @@ function ClientTable(search: any) {
   //Inico atualizar a tabela pela paginação
   useEffect(() => {
     http: axios
-      .get(`${URL_API_BACKEND}/clients?size=${SIZE}&page=${offset / SIZE}`)
+      .get(`https://api.npoint.io/f4c6c2a96c07bc6a1b0c`)
       .then((response) => {
         setClients(response.data.content);
         setTotalElements(response.data.totalElements);
