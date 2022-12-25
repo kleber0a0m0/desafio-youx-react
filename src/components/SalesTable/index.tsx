@@ -63,7 +63,7 @@ function SalesTable(search: any) {
   //Inicio listar as vendas
   function listar() {
     http: axios
-      .get(`${URL_API_BACKEND}/sales?size=${SIZE}&page=${offset / SIZE}`)
+      .get(`https://api.npoint.io/bae7a4d56933a5baf7ca`)
       .then((response) => {
         setSales(response.data.content);
         setTotalElements(response.data.totalElements);
