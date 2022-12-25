@@ -175,7 +175,7 @@ function SalesTable(search: any) {
   const handleClickEditSale = (idNumber: any) => {
     openModal();
     http: axios
-      .get(`${URL_API_BACKEND}/sales/findById/${idNumber}`)
+      .get(`https://api.npoint.io/872c2b54bdb4bfafa508`)
       .then((response) => {
         setEditId(idNumber);
         setClientEditSale(response.data.client.id);
